@@ -31,6 +31,11 @@ Toaster.prototype.showToaster = function showToaster(msg) {
 		"always-on-top": true
 	});
 
+	try {
+		require('electron-debug').openDevTools(this.window, false);
+	} catch (e) {
+		
+	}
 
 	var timer,height, width;
 	var screen = require('screen');
