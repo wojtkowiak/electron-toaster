@@ -4,7 +4,8 @@ var BrowserWindow = require('browser-window');  // Module to create native brows
 var ipc = require('electron').ipcMain;
 
 
-var showToaster = function(currentWindow, msg) {
+Toaster.prototype.showToaster = function showToaster(msg) {
+	currentWindow = this._currentWindow;
 	var self = this;
 	this.window = new BrowserWindow({
 		width: msg.width,
@@ -92,8 +93,10 @@ var Toaster = function(){
 };
 
 Toaster.prototype.init = function(currentWindow) {
+	var self = this;
+	this._currentWindow = currentWindow;
 	ipc.on('electron-toaster-message', function(event, msg) {
-	  showToaster(currentWindow, msg);
+	  self.showToaster(msg);
 	});
 };
 
