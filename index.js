@@ -1,5 +1,5 @@
 
-var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var BrowserWindow = require('electron').BrowserWindow;  // Module to create native browser window.
 // In main process.
 var ipc = require('electron').ipcMain;
 
