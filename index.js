@@ -80,7 +80,7 @@ Toaster.prototype.showToaster = function showToaster(msg) {
 
 	var htmlFile = msg.htmlFile || 'file://' + __dirname + '/toaster.html?';
 	htmlFile += htmlFile + 'foo=bar&title=' + encodeURIComponent(msg.title || "") + '&message=' + encodeURIComponent(msg.message || "") + '&detail=' + encodeURIComponent(msg.detail || "") + "&timeout=" + (msg.timeout || 5000);
-	this.window.webContents.loadUrl(htmlFile);
+	this.window.webContents.loadURL(htmlFile);
 
 	/*
 		# for debugging
