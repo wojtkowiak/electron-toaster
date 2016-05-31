@@ -38,7 +38,7 @@ Toaster.prototype.showToaster = function showToaster(msg) {
 	}
 
 	var timer,height, width;
-	var screen = require('electron').electronScreen;
+	var screen = require('electron').screen;
 	var pos = currentWindow.getPosition();
 	var display = screen.getDisplayNearestPoint({x:pos[0], y:pos[1]});
 
