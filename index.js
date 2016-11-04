@@ -34,7 +34,7 @@ Toaster.prototype.showToaster = function showToaster(msg) {
 	try {
 		require('electron-debug').openDevTools(this.window, false);
 	} catch (e) {
-		
+
 	}
 
 	var timer,height, width;
